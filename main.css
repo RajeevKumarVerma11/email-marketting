@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.custom-bar::-webkit-scrollbar {
+    padding:6px;
+    width: 6px;
+   }
+
+ /* Scrollbar Thumb */
+ .custom-bar::-webkit-scrollbar-thumb {
+ background-color: #4f46e5; /* Replace with your desired color */
+ border-radius: 6px;
+ }
+
+  /* Scrollbar Track */
+   .custom-bar::-webkit-scrollbar-track {
+    background-color: #f3f4f6; /* Replace with your desired color */
+   }
+
+
+   .card{
+    perspective: 300px;
+    transform-style: preserve-3d;
+   }
+
+   .back{
+    transform: rotateX(90deg);
+    backface-visibility: hidden;
+    
+   }
+   .card:hover .back{
+    transform: rotateX(0deg);
+    backface-visibility: visible;
+    transition: all;
+    transition-duration: 1000ms;
+    z-index: -20;
+
+   }
+   .card:hover .front{
+       background-color:transparent;
+       transition:all;
+       transition-duration:700;
+   }
+
+   .card:hover .chart{
+     animation-name: moveup;
+     animation-duration: 600ms;
+     animation-fill-mode: forwards;
+     animation-timing-function: ease-out;
+     animation-delay: 1200ms;
+     animation-iteration-count: 1;
+   }
+   .card:hover .chart2{
+    animation-name: moveup2;
+     animation-duration: 600ms;
+     animation-fill-mode: forwards;
+     animation-timing-function: ease-out;
+     animation-delay: 1200ms;
+     animation-iteration-count: 1;
+   }
+   @keyframes moveup{
+    0%{
+        top: -0rem;
+        border-color: white;
+        opacity: 0;
+    }
+
+ 
+    50%{
+        top: -6rem;
+        border-color: white;
+        opacity: 1;
+    }
+   
+    100%{
+        top:-12rem;
+        opacity: 1;
+        border-color: gray;
+
+    }
+
+   }
+   @keyframes moveup2{
+    0%{
+        top: -0rem;
+        border-color: white;
+        opacity: 0;
+    }
+
+ 
+    50%{
+        top: -2rem;
+        border-color: white;
+        opacity: 1;
+    }
+   
+    100%{
+        top:-4rem;
+        opacity: 1;
+        border-color: gray;
+
+    }
+
+   }
